@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title> Responsive Login and Signup Form </title>-->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='boxicons.css' rel='stylesheet'>
+        <style>
+            .head{
+                text-decoration: underline;
+            
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <u ><header class="head">Login as Administrator </header></u>
+
+
+                    <form method="post">
+
+
+
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" name="Email" class="input" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" name="password" class="password" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button name="log">Login</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="/admin reg.html" >Signup</a></span>
+                    </div>
+                </div>
+
+                
+        </section>
+
+        <!-- JavaScript -->
+        <script src="/login.js"></script>
+        <?php
+        $con=mysqli_connect('localhost','root','','first');
+        if(isset($_POST['log']))
+        {
+            $mail=$_Post['Email'];
+            $pass=$_Post['Password'];
+            $query="insert into administrator_login(Email,Password) values ('$mail','$pass')";
+            $run=mysqli_query($von,$query);
+        }
+        ?>
+    </body>
+</html>
