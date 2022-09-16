@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Library</title>
+  <link rel="stylesheet" href="#">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha', cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+
+    /* CSS for main element */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("/images/right college.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    .intro button {
+      background-color: #5edaf0;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+    }
+
+    .achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements .work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 80px;
+      border-top: 2px solid #eeeeee;
+    }
+
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .about-me-text p {
+      font-size: 15px;
+      color: #585858;
+      margin: 5px 0;
+    }
+
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 10px 50px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+    /* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: #000;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 10px 1px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: rgb(84, 74, 74);}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: rgb(12, 230, 121);}
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="/home.html" class="logo">G.P. Bhagalpur</a>
+    <nav class="nav-items">
+     <a href="/home.html">Home</a>
+      <a href="/gallary.html">Gallary</a>
+    </nav>
+    <div class="dropdown">
+        <button class="dropbtn">Library</button>
+        <div class="dropdown-content">
+          <a href="/p.html">Administrator</a>
+        <a href="/student  login.html">Student</a>
+        </div>
+      </div>
+
+  </header>
+  <main>
+    <div class="intro">
+      <h1>e-Library</h1>
+      <p>There is no friend as loyal as a book.</p>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <i class="fas fa-atom"></i>
+        <p class="work-heading">J.k.Rowling</p>
+        <p class="work-text"> I do believe something very magical can happen when you read.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-skiing"></i>
+        <p class="work-heading">Carl T. Rowan</p>
+        <p class="work-text">The library is the temple of learning, and learning has liberated more people than all the wars in history.</p>
+      </div>
+      <div class="work">
+        <i class="fas fa-ethernet"></i>
+        <p class="work-heading">Walter Savage Landor </p>
+        <p class="work-text">"Nothing is pleasanter than exploring a library.".</p>
+      </div>
+    </div>
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2>About GP Bhagalpur</h2>
+        <p>Government Polytechnic, Bhagalpur was established as Bhagalpur School of Engineering with aim of providing quality higher education in the field of Engineering & Technology on par with National Standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis.
+
+            It is spread in an area of nearly 50 acreswith four lush green campuses namely Main Campus, Kanchangarh Campus,ShreeBhawan Campus and Lakshmi BhawanCampus, not far from the bank of the River Ganga at Barari.It is situated at a distance of nearly 9 Km East to Bhagalpur Railway Station and 20 Km North to Naugachhia Railway Station. The Latitudes and Longitudes are 25.2599ON and 87.0274OE.
+ 
+            The Institution was established on 31st May 1955 with its name Bhagalpur School of Engineering under the Department of Science and Technology, Govt. of Bihar which was later rechristened to its present name.Initially Institution was started with Diploma in Civil Engineering with 30 intake capacity, which was later increased to 60.Diploma in Agricultural Engineering was started in 1977 with 20 intake capacity, which was later increased to 30.In 1992, Diploma in Textile Technology & Textile Design was started with 30 intake capacity and the branch was renamed as Diploma in Textile Engineering in the year of 2008.Two latest and employment generating Diploma in Electronics Engineering and Diploma in Computer Science & Engineering were commenced with intake capacity of 60 each.</p>
+      </div>
+      <img src="/images/bottom.jpg" alt="me">
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="copy">&copy; tasteofCSE</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>More Info</span>
+        <a href="https://gpbgp.org/">G.P. Bhagalpur</a>
+        <a href="http://sbtebihar.gov.in/">SBTE</a>
+        <a href="https://www.aicte-india.org/">AICTE</a>
+        <a href="http://nptel.ac.in/">NPTEL</a>
+      </div>
+      <div class="links">
+        <span>Contact Us</span>
+        <a href="mailto:bhag.gp@gmail.com">📧E-mail:-bhag.gp@gmail.com</a>
+        <a href="tel:+06412400717">📞:-06412400717</a>
+        <a href="https://www.google.com/maps/dir/25.2410228,86.9724187/gpbgp/@25.2454716,86.9634853,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x39f0362cf63c2cb1:0x74f65df3c0427773!2m2!1d87.020338!2d25.262919">📍Location</a>
+       <p style="color: #fff;" > Government Polytechnic, Bhagalpur <br>
+        Barari, Bhagalpur 812003<br>
+        Bihar</p>
+    </div>
+    </div>
+  </footer>
+</body>
+</html>
